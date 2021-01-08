@@ -1,7 +1,6 @@
 # mern20
 kicking the mern tires late 2020
 
-### todo, docker-compose up
-### todo, refactor from redux to hooks
-### todo, consider swapping out cloud.mongodb for ...at least local container...
-    so todo add some process.env
+1. cd into server, npm start
+2. cd into client, npm start
+3. load postman todo...
