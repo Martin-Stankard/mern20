@@ -10,7 +10,7 @@ const posts = (posts=[], action) => {
             break;
 
         case 'CREATE':
-            return posts;
+            return [ ...posts , action.payload ];
             break;
 
         default:
