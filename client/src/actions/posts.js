@@ -12,15 +12,8 @@ const getPosts = () => async (dispatch) => {
         });
     } catch (error) {
         
-    }
     
-    const action = { 
-        type: 'FETCH_ALL', 
-        payload: []
-    };
-
-    //return action;
-    //per thunk
+    }
 }
 
 export default getPosts;
