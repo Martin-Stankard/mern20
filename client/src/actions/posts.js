@@ -15,7 +15,7 @@ export const getPosts = () => async (dispatch) => {
     }
 }
 //thunk async syntax...function returns a function.
-export const createPosts = (post) => async (dispatch) => {
+export const createPost = (post) => async (dispatch) => {
     try {
         const {data} = await api.createPost(post);
         dispatch({ 
