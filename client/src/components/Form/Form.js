@@ -6,9 +6,11 @@ import { useDispatch } from 'react-redux';
 
 import useStyles from "./styles.js";
 
-import {createPost} from '../../actions/posts';
+import {createPost, updatePost} from '../../actions/posts';
 
-const Form = () => {
+//TODO get the current id of post selected by user in Post component
+
+const Form = ({currentId, setCurrentId}) => {
     const [postData, setPostData] = useState({
         creator: '',
         title: '',
@@ -22,7 +24,12 @@ const Form = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        dispatch(createPost(postData))
+        if(currentId){
+            dispatch(updatePost( currentId, postData ))
+        }else{
+            dispatch(createPost ( currentId, postData ))
+        }
+
     }
 
     const clear = () => {
