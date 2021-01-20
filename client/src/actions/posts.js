@@ -23,7 +23,7 @@ export const createPost = (post) => async (dispatch) => {
             payload: data
         });
     } catch (error) {
-        console.log(error.message);
+        console.log(error);
     }
 }
 
@@ -33,6 +33,6 @@ export const updatePost = (id, post) => async (dispatch) => {
         //todo create reducer bound string js enum
         dispatch({ type: 'UPDATE', payload: data});
     } catch (error) {
-        console.log(error.message);
+        console.log(error);
     }
 }
