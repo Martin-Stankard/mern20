@@ -17,13 +17,13 @@ export const getPosts = () => async (dispatch) => {
 //thunk async syntax...function returns a function.
 export const createPost = (post) => async (dispatch) => {
     try {
-        const {data} = await api.createPost(post);
+        const { data } = await api.createPost(post);
         dispatch({ 
             type: 'CREATE', 
             payload: data
         });
     } catch (error) {
-        console.log(error);
+        console.log(error.message);
     }
 }
 

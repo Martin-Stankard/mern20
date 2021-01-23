@@ -32,7 +32,7 @@ const Form = ({ currentId, setCurrentId }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if ( currentId === 0 ) {
+    if ( currentId === null ) {
       dispatch(createPost(postData));
       
     } else {
