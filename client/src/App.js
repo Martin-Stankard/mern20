@@ -6,7 +6,7 @@ import { getPosts } from "./actions/posts";
 
 import Form from "./components/Form/Form.js";
 import Posts from "./components/Posts/Posts.js";
-import memories from "./images/memories.png";
+import balloon from "./images/balloon.png";
 import useStyles from "./styles.js";
 
 const App = () => {
@@ -26,8 +26,8 @@ const App = () => {
         </Typography>
         <img
           className={classes.image}
-          src={memories}
-          alt="memories"
+          src={balloon}
+          alt="balloon"
           height="60"
         />
       </AppBar>
