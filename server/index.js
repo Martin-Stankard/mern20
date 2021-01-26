@@ -29,6 +29,10 @@ app.use(cors());
 //important nitnoid cors() before routes.
 app.use("/posts", postRoutes);
 
+//baseline greeting route:
+app.use("/", (req,res)=>{
+  res.send("Hello from Pics & Bits");
+});
 
 // heroku lkes PORT
 const PORT = process.env.PORT || 5000;
