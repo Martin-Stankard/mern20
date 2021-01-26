@@ -7,8 +7,6 @@ import useStyles from "./styles.js";
 
 import { createPost, updatePost } from "../../actions/posts";
 
-import {} from "react-redux";
-
 const Form = ({ currentId, setCurrentId }) => {
   const [postData, setPostData] = useState({
     creator: "",
@@ -32,12 +30,10 @@ const Form = ({ currentId, setCurrentId }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if ( currentId === null ) {
+    if (currentId === null) {
       dispatch(createPost(postData));
-      
     } else {
       dispatch(updatePost(currentId, postData));
-      
     }
     clear();
   };
@@ -98,7 +94,14 @@ const Form = ({ currentId, setCurrentId }) => {
           label="Tags"
           fullWidth
           value={postData.tags}
-          onChange={(e) => setPostData({ ...postData, tags: e.target.value })}
+          onChange={(e) =>
+            setPostData({
+              ...postData,
+              tags: e.target.value.split(",").map(function (item) {
+                return item.trim();
+              }),
+            })
+          }
         />
         <div className={classes.fileInput}>
           <FileBase
