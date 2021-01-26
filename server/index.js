@@ -32,7 +32,7 @@ app.use("/posts", postRoutes);
 
 // heroku lkes PORT
 const PORT = process.env.PORT || 5000;
-
+//git surgery verified. This code was insecure in a previous life
 mongoose
   .connect(process.env.CONNECTION_URL, {
     useNewUrlParser: true,
