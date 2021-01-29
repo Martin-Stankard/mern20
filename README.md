@@ -1,5 +1,5 @@
 # mern20
-kicking the mern tires late 2020
+kicking the mern tires 2020
 
 1. cd into /server, npm start
 2. cd into /client, npm start
