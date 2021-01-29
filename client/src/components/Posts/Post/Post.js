@@ -17,6 +17,7 @@ import useStyles from "./styles.js";
 
 import { useDispatch } from "react-redux";
 import { deletePost, likePost, dislikePost } from "../../../actions/posts";
+import placeHolder from "../../../images/balloon.png";
 
 const Post = ({ post, setCurrentId }) => {
   const classes = useStyles();
@@ -27,7 +28,7 @@ const Post = ({ post, setCurrentId }) => {
     <Card className={classes.card}>
       <CardMedia
         className={classes.media}
-        image={post.selectedFile}
+        image={post.selectedFile ? post.selectedFile : placeHolder}
         title={post.title}
       />
       <div className={classes.overlay}>
