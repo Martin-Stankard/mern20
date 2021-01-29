@@ -4,6 +4,7 @@ import {
   UPDATE,
   DELETE,
   LIKE,
+  DISLIKE
 } from "../constants/actionTypes";
 import * as api from "../api";
 
@@ -58,6 +59,16 @@ export const likePost = (id) => async (dispatch) => {
     const { data } = await api.likePost(id);
 
     dispatch({ type: LIKE, payload: data });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const dislikePost = (id) => async (dispatch) => {
+  try {
+    const { data } = await api.dislikePost(id);
+
+    dispatch({ type: DISLIKE, payload: data });
   } catch (error) {
     console.log(error);
   }

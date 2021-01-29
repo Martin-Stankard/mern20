@@ -7,7 +7,8 @@ import {
   Button,
   Typography,
 } from "@material-ui/core";
-import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
+import ArrowDropUpIcon from "@material-ui/icons/ArrowDropUp";
+import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import DeleteIcon from "@material-ui/icons/Delete";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import moment from "moment";
@@ -15,7 +16,7 @@ import moment from "moment";
 import useStyles from "./styles.js";
 
 import { useDispatch } from "react-redux";
-import { deletePost, likePost } from "../../../actions/posts";
+import { deletePost, likePost, dislikePost } from "../../../actions/posts";
 
 const Post = ({ post, setCurrentId }) => {
   const classes = useStyles();
@@ -58,14 +59,18 @@ const Post = ({ post, setCurrentId }) => {
         </Typography>
       </CardContent>
       <CardActions className={classes.cardActions}>
-        <Button
-          size="small"
-          color="primary"
-          onClick={() => dispatch(likePost(post._id))}
-        >
-          <ThumbUpAltIcon fontSize="small" />
-          &nbsp; Like &nbsp;
+        <Button size="small" color="primary">
+          <ArrowDropUpIcon
+            fontSize="small"
+            onClick={() => dispatch(likePost(post._id))}
+          />
+          &nbsp;
           {post.likeCount}
+          &nbsp;
+          <ArrowDropDownIcon
+            fontSize="small"
+            onClick={() => dispatch(dislikePost(post._id))}
+          />
         </Button>
         <Button
           size="small"

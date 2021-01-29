@@ -4,6 +4,7 @@ import {
   UPDATE,
   DELETE,
   LIKE,
+  DISLIKE
 } from "../constants/actionTypes";
 
 // simplified notes
@@ -18,6 +19,7 @@ const posts = (posts = [], action) => {
 
     case UPDATE:
     case LIKE:
+    case DISLIKE:
       return posts.map((post) =>
         post._id === action.payload._id ? action.payload : post
       );
